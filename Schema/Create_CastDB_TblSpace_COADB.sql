@@ -1,0 +1,39 @@
+-- ====================================================================
+-- Definition
+-- ====================================================================
+@./CastDB_Define.sql
+
+-- ====================================================================
+-- Table Space
+-- ====================================================================
+CREATE BIGFILE TABLESPACE CASTDB
+ DATAFILE '/opt/oracle/oradata/COADB/castdb_01.dbf'
+ SIZE 50M AUTOEXTEND ON NEXT 100M
+ LOGGING
+ DEFAULT NOCOMPRESS
+ ONLINE
+ EXTENT MANAGEMENT LOCAL AUTOALLOCATE
+ SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE BIGFILE TEMPORARY TABLESPACE CASTDB_TMP
+ TEMPFILE '/opt/oracle/oradata/COADB/castdb_tmp01.dbf'
+ SIZE 20M AUTOEXTEND ON NEXT 100M
+ EXTENT MANAGEMENT LOCAL UNIFORM;
+
+CREATE BIGFILE TABLESPACE CASTDB_IDX
+ DATAFILE '/opt/oracle/oradata/COADB/castdb_idx01.dbf'
+ SIZE 20M AUTOEXTEND ON NEXT 100M
+ LOGGING
+ DEFAULT NOCOMPRESS
+ ONLINE
+ EXTENT MANAGEMENT LOCAL AUTOALLOCATE
+ SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE BIGFILE TABLESPACE CASTDB_DAT
+DATAFILE '/opt/oracle/oradata/COADB/castdb_dat01.dbf'
+SIZE 20M AUTOEXTEND ON NEXT 100M
+LOGGING
+DEFAULT NOCOMPRESS
+ONLINE
+EXTENT MANAGEMENT LOCAL AUTOALLOCATE
+SEGMENT SPACE MANAGEMENT AUTO;
